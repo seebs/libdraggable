@@ -1,0 +1,23 @@
+Identifier = "LibDraggable"
+
+Version = "VERSION"
+
+Email = "seebs@seebs.net"
+
+Name = {
+  English = "LibDraggable",
+  French = "LibDraggable",
+  German = "LibDraggable",
+}
+NameShort = "LibDraggable"
+
+Description = {
+  English = "A library for making windows draggable"
+}
+
+RunOnStartup = {
+  "LibDraggable.lua"
+}
+
+Environment = { "1.6" }
+
