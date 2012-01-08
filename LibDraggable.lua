@@ -26,10 +26,12 @@ function Draggable.draggify(window, callback)
   Draggable.windows[window] = newtab
   newtab.mousemove = window:GetBorder().Event.MouseMove
   newtab.leftup = window:GetBorder().Event.LeftUp
+  newtab.leftupoutside = window:GetBorder().Event.LeftUpoutside
   newtab.callback = callback
   window:GetBorder().Event.LeftDown = function(...) Draggable.leftdown(window, ...) end
   window:GetBorder().Event.MouseMove = function(...) Draggable.mousemove(window, ...) end
   window:GetBorder().Event.LeftUp = function(...) Draggable.leftup(window, ...) end
+  window:GetBorder().Event.LeftUpoutside = function(...) Draggable.leftupoutside(window, ...) end
   Draggable.windows[window] = newtab
 end
 
@@ -70,6 +72,20 @@ function Draggable.leftup(window, ...)
     if not win.dragging then
       if win.leftup then
         win.leftup(...)
+      end
+    end
+    win.dragging = false
+    win.ev_x = nil
+    win.ev_y = nil
+  end
+end
+
+function Draggable.leftupoutside(window, ...)
+  local win = Draggable.windows[window]
+  if win then
+    if not win.dragging then
+      if win.leftupoutside then
+        win.leftupoutside(...)
       end
     end
     win.dragging = false
