@@ -44,6 +44,11 @@ function Draggable.leftdown(window, ...)
   win.dragging = true
   win.win_x = window:GetLeft()
   win.win_y = window:GetTop()
+  local l, t, r, b = window:GetBounds()
+  window:ClearAll()
+  window:SetPoint("TOPLEFT", UIParent, "TOPLEFT", l, t)
+  window:SetWidth(r - l)
+  window:SetHeight(b - t)
   win.ev_x = Inspect.Mouse().x
   win.ev_y = Inspect.Mouse().y
 end

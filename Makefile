@@ -1,4 +1,4 @@
-VERSION=0.2
+VERSION=0.3
 PACKAGE=LibDraggable
 
 include ../addon.mk

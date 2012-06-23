@@ -2,7 +2,7 @@ Identifier = "LibDraggable"
 
 Version = "VERSION"
 
-Email = "seebs@seebs.net"
+Email = "EMAIL"
 
 Name = {
   English = "LibDraggable",
@@ -19,5 +19,5 @@ RunOnStartup = {
   "LibDraggable.lua"
 }
 
-Environment = { "1.6" }
+Environment = { "1.8", "1.9" }
 
